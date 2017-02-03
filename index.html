@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取B站封面图</title>
+	<style type="text/css">
+		html,body,a{
+			padding: 0;
+			margin: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		a{
+			text-decoration:none;
+			color: #333;
+		}
+		html{ font-family: "microsoft yahei", "HanHei SC","PingHei","PingFang SC","STHeitiSC-Light","Helvetica Neue","Helvetica","Arial",sans-serif; }
+
+		.wrap{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 800px;
+			height: 40px;
+			margin-top: -20px;
+			margin-left: -400px;
+		}
+		#get,#btn{
+			position: absolute;
+			display: block;
+			outline: none;
+		}
+		#get{
+			left: 0px;
+			top: 0px;
+			background-color: #fff;
+			border: 1px solid #F25D8E;
+			width: 798px;
+			height: 38px;
+			line-height: 40px;
+			text-indent: 10px;
+			font-size: 20px;
+
+			border-radius: 6px;
+		}
+		#btn{
+			width: 150px;
+			height: 42px;
+			right: 0;
+			top: 0;
+			background: #F25D8E;
+			border-radius: 0 6px 6px 0;
+			color: #333;
+			text-decoration: none;
+			line-height: 42px;
+			text-align: center;
+		}
+		.message,.github{
+			position: absolute;
+			width: 300px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+		}
+		.github{
+			
+			left: 0;
+			top: -60px;
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		.message{
+
+			right: 0px;
+			top: -60px;
+			
+		}
+		.tip{
+			width: 800px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			position: absolute;
+			left: 0;
+			bottom: -60px;
+		}
+		.ss{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #000;
+			opacity: 0.5;
+			display: none;
+		}
+		.ss span{
+			display: block;
+			width: 600px;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 30px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -300px;
+			margin-top: -50px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="wrap">
+		<input type="text" id="get" placeholder="请输入AV号,例如: 170001 (邪恶-v-)">
+		<a href="javascript:;" id="btn">
+			干杯[]~(￣▽￣)~*
+		</a>
+		<div class="github"><a href="#">GitHub</a></div>
+		<div class="message">UP主@<a href="http://space.bilibili.com/26867101/#!/index">叁闻君</a> </div>
+		<div class="tip">
+			 注:有的图片尺寸会很小，这是和up主上传的尺寸有关
+		</div>
+	</div>
+	<div class="ss">
+		<span class="gg">加载中...</span>
+	</div>
+</body>
+
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		$('#btn').click(function(){
+
+			if($('#get').val() != '' && /^\d{1,8}$/.test($('#get').val())){
+				$('.ss').css('display','block');
+				$.ajax({
+					type : 'get',
+					url : 'http://thisummer.byethost7.com/tool/getbilibili.php',
+					dataType : 'jsonp',
+					jsonp : 'callback',
+					jsonpCallback:"success_jsonpCallback",
+					data : {
+						avid : $('#get').val()
+					},
+					success  : function(data){
+						data.text.replace(/<img\ssrc="(.*?)".*?>/,function(a,b,c){
+							if(b){
+								window.open('http://'+b);
+							}else{
+								alert('喵帕斯:可能这个av号不存在的说')
+							}
+						})
+						$('.ss').css('display','none');
+					},
+					error  : function(data){
+						alert('喵帕斯:网络有问题');
+					}
+				})
+
+				
+			}else{
+				alert('喵帕斯:错误的格式');
+			}
+
+		})
+	})
+</script>
+</html>

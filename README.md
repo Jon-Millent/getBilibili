@@ -2,7 +2,7 @@
 
 <div align=center>
   <img src="https://img.shields.io/badge/license-MIT-green.svg">
-  <a href="https://thisummer.000webhostapp.com/Apps/getBiliBili.zip"><img src="https://img.shields.io/badge/lan-php-brightgreen.svg" ></a>
+  <a href="https://thisummer.000webhostapp.com/Apps/getBiliBili.zip"><img src="https://img.shields.io/badge/Language-php-brightgreen.svg" ></a>
 </div>
 
 # getBilibili

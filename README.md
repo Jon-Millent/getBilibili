@@ -15,5 +15,5 @@
 * 打开输入AV号即可
 ## 链接
 * <a href="https://github.com/Jon-Millent/getBilibili.Net">客户端版本版本getBilibili仓库</a>
-* <a href="thisummer.top">最上川</a>
+* <a href="http://thisummer.top">最上川</a>
 

@@ -11,7 +11,7 @@
 <br/>
 **<a href="https://github.com/Jon-Millent/getBilibili.Net">客户端版本</a>**
 ## 使用
-* <a href="https://thisummer.000webhostapp.com/bilibili/">点击进入地址</a>
+* <a href="http://show.liluo.cc/getbilibili/">点击进入地址</a>
 * 打开输入AV号即可
 ## 链接
 * <a href="https://github.com/Jon-Millent/getBilibili.Net">客户端版本版本getBilibili仓库</a>

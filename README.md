@@ -9,6 +9,9 @@
 **获取B站封面图的web端APP**
 <br/>
 <br/>
+## 注意
+由于B站更改了页面渲染方式，所以目前这个不能用了。。。
+
 **<a href="https://github.com/Jon-Millent/getBilibili.Net">客户端版本</a>**
 ## 使用
 * <a href="http://show.liluo.cc/getbilibili/">点击进入地址</a>
